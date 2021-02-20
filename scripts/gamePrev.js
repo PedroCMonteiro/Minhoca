@@ -1,0 +1,21 @@
+const btnStart = document.getElementById("btnStart");
+const btnPlay = document.getElementById("btnPlay");
+const btnPause = document.getElementById("btnPause");
+const btnOptions = document.getElementById("btnOptions");
+const btnEnd = document.getElementById("btnEnd");
+const dvHelp = document.getElementById("btnEnd");
+const cnv = document.getElementById("myCanvas");
+const ctx = cnv.getContext("2d");
+
+var height = cnv.height;
+var width = cnv.width;
+var run = false;
+//var side;
+//var side = {x: 15, y: 15};
+var side = {x: Math.floor(width/64), y: Math.floor(height/36)};
+var grid = [];
+var snake = [];
+var food = [];
+var score = 0;
+var movement = "stop";
+var prevMovement = "stop";

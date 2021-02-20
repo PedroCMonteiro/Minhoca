@@ -1,4 +1,3 @@
-
 $(document).keydown(function (e)
 {
   let key = e.key;
@@ -50,9 +49,9 @@ function btnStart_click()
   setMovement("start");
   if(movement === "start")
   {
-    hide(btnStart);
-    show(btnPause);
-    show(btnEnd);
+    hideButton(btnStart);
+    showButton(btnPause);
+    showButton(btnEnd);
   }
 }
 
@@ -61,8 +60,8 @@ function btnPlay_click()
   setMovement("play");
   if(movement === "start")
   {
-    hide(btnPlay);
-    show(btnPause);
+    hideButton(btnPlay);
+    showButton(btnPause);
   }
 }
 
@@ -71,8 +70,8 @@ function btnPause_click()
   setMovement("pause");
   if(movement === "start")
   {
-    hide(btnPause);
-    show(btnPlay);
+    hideButton(btnPause);
+    showButton(btnPlay);
   }
 }
 
@@ -97,29 +96,31 @@ function btnEnd_click()
 
   if(movement === "stop")
   {
-    hide(btnPlay);
-    hide(btnPause);
-    hide(btnEnd);
-    show(btnStart);
+    hideButton(btnPlay);
+    hideButton(btnPause);
+    hideButton(btnEnd);
+    showButton(btnStart);
   }
 }
 
 function btnHelp_click()
 {
-  setMovement("help");
-  if(movement === "help")
+  try
   {
+    setMovement("help");
     showControls();
     hideCanvas();
   }
+  catch(e)
+    console.log(e);
 }
 
-function show(button)
+function showButton(button)
 {
   button.style.display = "inline";
 }
 
-function hide(button)
+function hideshowButton(button)
 {
   button.style.display = "none";
 }
