@@ -5,17 +5,17 @@ class Snake
 
 	constructor(maxX, maxY, color)
 	{
-		let x = Math.floor(Math.randon()*(maxX-1)) + 1;
-		let y = Math.floor(Math.randon()*(maxY-1)) + 1;
+		let x = Math.floor(Math.random()*(maxX-1)) + 1;
+		let y = Math.floor(Math.random()*(maxY-1)) + 1;
 
-		this.id = Id++;
+		this.id = this.Id++;
 		this.color = color;
 		this.limits = new Cell(maxX, maxY);
 		this.body = [new Cell(x, y)];
 		this.oldTail1 = undefined;
 		this.oldTail2 = undefined;
 
-		for(let i = 0; i < InitalSize; i++)	
+		for(let i = 0; i < this.InitalSize; i++)	
 		{
 			update("RIGHT");
 			grow();
